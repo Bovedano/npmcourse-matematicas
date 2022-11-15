@@ -7,7 +7,10 @@
  * @returns 
  */
 const suma = (n1, n2) => {
-    return n1 + n2;
+    if(checkNumericos(n1, n2)){
+        return n1 + n2;
+    }
+    return NaN
 }
 
 /**
@@ -19,7 +22,10 @@ const suma = (n1, n2) => {
  * @returns 
  */
 const resta = (n1, n2) => {
-    return n1 - n2;
+    if(checkNumericos(n1, n2)){
+        return n1 - n2;
+    }
+    return NaN
 }
 
 /**
@@ -31,7 +37,10 @@ const resta = (n1, n2) => {
  * @returns 
  */
 const division = (n1, n2) => {
-    return n1 / n2;
+    if(checkNumericos(n1, n2)){
+        return n1 / n2;
+    }
+    return NaN
 }
 
 /**
@@ -43,7 +52,22 @@ const division = (n1, n2) => {
  * @returns 
  */
 const multiplicacion = (n1, n2) => {
-    return n1 * n2;
+    if(checkNumericos(n1, n2)){
+        return n1 * n2;
+    }
+    return NaN
+}
+
+const checkNumericos = (n1, n2) => {
+    if(typeof n1 !== "number"){
+        console.log("n1 no es numérico")
+        return false;
+    }
+    if(typeof n2 !== "number"){
+        console.log("n2 no es numérico")
+        return false;
+    }
+    return true;
 }
 
 module.exports = {
